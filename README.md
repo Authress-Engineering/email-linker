@@ -17,6 +17,14 @@ Just install the package:
 
 It's that easy.
 
+## Automatically supported providers
+* Gmail
+* Outlook
+* Yahoo
+* Proton
+* iCloud
+* [Request another one](https://github.com/Rhosys/email-linker/issues) - and we'll implement it!
+
 
 ## Why use an email linker?
 
