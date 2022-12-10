@@ -16,22 +16,6 @@
 
 Creates a branded button to navigate a user to their email to verify their login automatically. So that you can ensure users don't drop their account creation flow.
 
-<p align="center">
-    <a href="./LICENSE" alt="apache 2.0 license">
-      <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg">
-    </a>
-    <a href="https://badge.fury.io/js/email-linker" alt="npm version">
-        <img src="https://badge.fury.io/js/email-linker.svg">
-    </a>
-    <a href="https://badge.fury.io/js/email-linker" alt="npm version">
-      <img src="https://badgen.net/bundlephobia/minzip/email-linker?color=green">
-    </a>
-    <a href="https://www.webcomponents.org/element/email-linker" alt="published on webcomponents.org">
-        <img src="https://img.shields.io/badge/webcomponents.org-Email%20Linker-blue.svg?style=social">
-    </a>
-</p>
-
-
 ## What does it look like?
 For gmail users, you they'll see this:
 
