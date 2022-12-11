@@ -1,9 +1,6 @@
-import { LitElement } from 'lit';
+import { LitElement, css } from 'lit';
 
-// Styles
-import Styles from './styles/styles.js';
-
-import mainBodyTemplate from './templates/mainBodyTemplate';
+import buttonTemplate from './buttonTemplate';
 
 export default class EmailLinker extends LitElement {
   constructor() {
@@ -13,13 +10,50 @@ export default class EmailLinker extends LitElement {
 
   static get properties() {
     return {
-      email: { type: String, attribute: 'email' }
+      email: { type: String, attribute: 'email' },
+      fromDomain: { type: String, attribute: 'from-email-domain' }
     };
   }
 
   static finalizeStyles() {
     return [
-      Styles
+      css`
+      .sign-in-button {
+        border: none;
+        cursor: pointer;
+        min-height: 21px;
+        min-width: 21px;
+        background-color: white;
+        box-shadow: 0 2px 5px #1D2F3B1A;
+        color: var(--dark);
+      
+        border-radius: 5px;
+        border-color: var(--info);
+        padding: 10px 14px;
+      
+        font-family: 'Roboto', sans-serif;
+        line-height: normal;
+      }
+      
+      .sign-in-button:focus, .sign-in-button:active:focus {
+        box-shadow: none;
+      }
+      
+      .sign-in-button:hover:not(:disabled) {
+        background-color: var(--primary);
+        color: white
+      }
+      
+      .sign-in-button:active:not(:disabled) {
+        background-color: var(--gray);
+        color: var(--light);
+        border-color: var(--info);
+      }
+      
+      .sign-in-button:active:disabled {
+        color: var(--gray);
+      }
+      `
     ];
   }
 
@@ -34,7 +68,7 @@ export default class EmailLinker extends LitElement {
   }
 
   render() {
-    return mainBodyTemplate.call(this);
+    return buttonTemplate.call(this);
   }
 
   attributeChangedCallback(name, oldVal, newVal) {

@@ -24,10 +24,16 @@ For gmail users, you they'll see this:
 Just install the package:
 
 * `npm install email-linker`
-* And then reference it passing in the email
+* And then reference it passing in the email, and the `from` domain, your custom domain that sent the email.
 
 ```html
-<email-linker email="example-email@gmail.com" />
+<email-linker email="example-email@gmail.com" from-email-domain="application.custom-domain.com" />
+```
+
+For instance, if using [Authress](https://authress.io) as your user provider, and the user that just signed up is `my-first-account@gmail.com`
+
+```html
+<email-linker email="my-first-account@gmail.com" from-email-domain="authress.io"></email-linker>
 ```
 
 It's that easy.

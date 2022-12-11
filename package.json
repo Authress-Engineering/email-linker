@@ -43,9 +43,12 @@
     "buffer": "^6.0.3",
     "color": "^4.2.3",
     "create-hash": "^1.2.0",
+    "extract-loader": "^5.1.0",
     "lit": "^2.3.1",
+    "lit-scss-loader": "^2.0.1",
     "lodash.clonedeep": "^4.5.0",
-    "lodash.merge": "^4.6.2"
+    "lodash.merge": "^4.6.2",
+    "sass-loader": "^13.2.0"
   },
   "scripts": {
     "build": "run-s build:umd:browser build:commonjs build:es",
