@@ -14,7 +14,9 @@
     </a>
 </p>
 
-Creates a branded button to navigate a user to their email to verify their login automatically. So that you can ensure users don't drop their account creation flow.
+Creates a branded button to navigate a user to their email to verify their login automatically.
+
+The results are clear from the this case study from [Growth.design](https://growth.design/sniper-link#experiment-result), you can ensure that users don't drop during their account creation flow.
 
 ## What does it look like?
 For gmail users, you they'll see this:
