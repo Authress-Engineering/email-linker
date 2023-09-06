@@ -84,7 +84,7 @@
     "eslint-config-cimpress-atsquad": "1",
     "eslint-import-resolver-webpack": "^0.13.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-mocha": "^7.0.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
