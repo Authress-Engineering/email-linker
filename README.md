@@ -23,9 +23,18 @@ For gmail users, you they'll see this:
 
 <img src="https://user-images.githubusercontent.com/5056218/206877156-b7c2df3f-2ec1-4169-bb03-2f58f015f153.png" width="400">
 
-Just install the package:
+## Usage
 
-* `npm install email-linker`
+* Install the package:
+
+`npm install email-linker`
+
+* Import it
+
+```js
+import 'email-linker';
+```
+
 * And then reference it passing in the email, and the `from` domain, your custom domain that sent the email.
 
 ```html
