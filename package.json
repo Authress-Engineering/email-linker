@@ -21,9 +21,13 @@
     "inbox opening",
     "open inbox",
     "gmail",
+    "mailto",
+    "mail-to",
+    "mailto-link",
     "open gmail",
     "outlook",
-    "open outlook"
+    "open outlook",
+    "open email"
   ],
   "main": "dist/lib/email-linker.js",
   "module": "dist/es/email-linker.js",
