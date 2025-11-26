@@ -21,7 +21,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 20
+        node-version: 18
         registry-url: 'https://registry.npmjs.org'
 
     - name: Install packages
@@ -30,6 +30,11 @@ jobs:
       run: node make.js setup
     - name: Run build
       run: yarn build
+    - name: Set up Node.js for publishing
+      uses: actions/setup-node@v1
+      with:
+        node-version: 20
+        registry-url: 'https://registry.npmjs.org'
     - name: Deploy to NPM
       if: github.ref != 'refs/heads/main' && github.event_name == 'push'
       run: |
