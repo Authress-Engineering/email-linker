@@ -22,7 +22,7 @@ function SetTheme() {
 }
 
 export default function buttonTemplate() {
-  const buildUrlData = buildUrl({ email: this.email, from: this.fromDomain });
+  const buildUrlData = buildUrl({ email: this.email, from: this.fromDomain, fallbackProviderId: this.provider });
   if (!buildUrlData) {
     return '';
   }

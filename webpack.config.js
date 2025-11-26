@@ -79,8 +79,8 @@ export default {
         loader: 'eslint-loader',
         options: {
           emitWarning: true,
-          // failOnWarning: true,
-          // failOnError: true,
+          failOnWarning: process.env.NODE_ENV === 'production',
+          failOnError: process.env.NODE_ENV === 'production',
           fix: false,
           configFile: './.eslintrc',
           outputReport: {

@@ -73,15 +73,19 @@ const templates = {
   },
 };
 
-const buildUrl = ({ email, from }) => {
-  const provider = emailToProvider(email);
-  const dateString = buildDate(provider, 1, 1);
+const aliases = {
+  gmail: 'google'
+};
 
-  if (!provider) {
+const buildUrl = ({ email, from, fallbackProviderId }) => {
+  const providerId = emailToProvider(email) || aliases[fallbackProviderId] || fallbackProviderId;
+  const dateString = buildDate(providerId, 1, 1);
+
+  const template = templates[providerId];
+  if (!template) {
     return null;
   }
 
-  const template = templates[provider];
   return {
     brandData: {
       buttonText: template.buttonText,

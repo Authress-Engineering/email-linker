@@ -11,7 +11,8 @@ export default class EmailLinker extends LitElement {
   static get properties() {
     return {
       email: { type: String, attribute: 'email' },
-      fromDomain: { type: String, attribute: 'from-email-domain' }
+      fromDomain: { type: String, attribute: 'from-email-domain' },
+      provider: { type: String, attribute: 'provider' }
     };
   }
 
