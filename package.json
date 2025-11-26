@@ -6,7 +6,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rhosys/email-linker.git"
+    "url": "https://github.com/Authress-Engineering/email-linker.git"
   },
   "license": "Apache-2.0",
   "keywords": [
