@@ -39,7 +39,7 @@ const emailToProvider = (email) => {
     return 'microsoft';
   }
 
-  if (domain.match('proton.me') || domain.match('protonmail.com')) {
+  if (domain.match('proton.me') || domain.match('protonmail.com') || domain.match('protonmail.ch')) {
     return 'proton';
   }
 
