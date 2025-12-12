@@ -31,7 +31,7 @@ const emailToProvider = (email) => {
     return 'google';
   }
 
-  if (domain.match(/yahoo.(com|co.uk|fr|it)/) || domain.match(/(ymail|rocketmail).com/)) {
+  if (domain.match(/yahoo.(com|co.uk|fr|it|de)/) || domain.match(/(ymail|rocketmail).com/)) {
     return 'yahoo';
   }
 
