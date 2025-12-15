@@ -1,6 +1,7 @@
 import { LitElement, css } from 'lit';
 
 import buttonTemplate from './buttonTemplate';
+import buildUrl from './utils/urlBuilder';
 
 export default class EmailLinker extends LitElement {
   constructor() {
@@ -74,6 +75,10 @@ export default class EmailLinker extends LitElement {
 
   attributeChangedCallback(name, oldVal, newVal) {
     super.attributeChangedCallback(name, oldVal, newVal);
+  }
+
+  resolveEmailProvider() {
+    return buildUrl({ email: this.email });
   }
 }
 
