@@ -11,6 +11,13 @@
 
   <script src="https://unpkg.com/email-linker/dist/browser/email-linker.min.js" type="module" defer></script>
 
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+
   <body>
     <email-linker email="test@gmail.com" from-email-domain="authress.io"></email-linker>
     <email-linker email="test@protonmail.com" from-email-domain="authress.io"></email-linker>
@@ -19,6 +26,7 @@
     <email-linker email="test@yahoo.com" from-email-domain="authress.io"></email-linker>
     <email-linker email="test@gmailalt.com" from-email-domain="authress.io" provider="gmail"></email-linker>
     <email-linker email="test@zoho.com" from-email-domain="authress.io"></email-linker>
+    <email-linker email="test" from-email-domain="authress.io" provider="ionos.de"></email-linker>
   </body>
 
 </html>
