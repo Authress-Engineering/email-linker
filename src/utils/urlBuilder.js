@@ -90,7 +90,7 @@ const aliases = {
 };
 
 const buildUrl = ({ email, from, fallbackProviderId }) => {
-  const providerId = emailToProvider(email) || aliases[fallbackProviderId] || fallbackProviderId;
+  const providerId = email && emailToProvider(email) || aliases[fallbackProviderId] || fallbackProviderId;
   const dateString = buildDate(providerId, 1, 1);
 
   const template = templates[providerId];

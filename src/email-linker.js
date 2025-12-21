@@ -79,7 +79,7 @@ export default class EmailLinker extends LitElement {
 }
 
 export function resolveEmailProvider({ providerDomain }) {
-  const fallbackProviderId = providerDomain.replace(/[.]$/, '').split('.').slice(-3, -1).join('.');
+  const fallbackProviderId = providerDomain.replace(/[.]$/, '').split('.').slice(-2).join('.');
   return buildUrl({ fallbackProviderId });
 }
 
