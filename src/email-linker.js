@@ -76,10 +76,11 @@ export default class EmailLinker extends LitElement {
   attributeChangedCallback(name, oldVal, newVal) {
     super.attributeChangedCallback(name, oldVal, newVal);
   }
+}
 
-  resolveEmailProvider() {
-    return buildUrl({ email: this.email });
-  }
+export function resolveEmailProvider({ providerDomain }) {
+  const fallbackProviderId = providerDomain.replace(/[.]$/, '').split('.').slice(-3, -1).join('.');
+  return buildUrl({ fallbackProviderId });
 }
 
 if (!customElements.get('email-linker')) {
