@@ -20,6 +20,6 @@ export interface ResolveEmailProviderOptions {
  * @export
  * @summary Verify a provider domain has an available configuration
  * @param {ResolveEmailProviderOptions} options
- * @returns {Promise<boolean>} True if the provider configuration exists, falso otherwise
+ * @returns {boolean} True if the provider configuration exists, falso otherwise
 */
-export function resolveEmailProvider(options: ResolveEmailProviderOptions): Promise<boolean>;
+export function resolveEmailProvider(options: ResolveEmailProviderOptions): boolean;
