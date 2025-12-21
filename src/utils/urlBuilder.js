@@ -27,23 +27,23 @@ const emailToProvider = (email) => {
     return null;
   }
 
-  if (domain.match(/(gmail|googlemail|google).com/)) {
+  if (domain.match(/(gmail|googlemail|google).com$/)) {
     return 'google';
   }
 
-  if (domain.match(/yahoo.(com|co.uk|fr|it|de)/) || domain.match(/(ymail|rocketmail).com/)) {
+  if (domain.match(/yahoo.(com|co.uk|fr|it|de)$/) || domain.match(/(ymail|rocketmail).com$/)) {
     return 'yahoo';
   }
 
-  if (domain.match(/(outlook|live|hotmail|msn|passport).com/) || domain.match('passport.net')) {
+  if (domain.match(/(outlook|live|hotmail|msn|passport).com$/) || domain.match(/passport.net$/)) {
     return 'microsoft';
   }
 
-  if (domain.match('proton.me') || domain.match('protonmail.com') || domain.match('protonmail.ch')) {
+  if (domain.match(/proton.me$/) || domain.match(/protonmail.(com|ch)$/)) {
     return 'proton';
   }
 
-  if (domain.match('icloud.com')) {
+  if (domain.match(/icloud.com$/)) {
     return 'icloud';
   }
 
