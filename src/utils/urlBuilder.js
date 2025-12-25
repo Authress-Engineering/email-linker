@@ -21,7 +21,7 @@ const buildDate = (provider, daysAgo, hoursAgo) => {
 };
 
 const emailToProvider = (email) => {
-  const domain = (email?.match('@') ? email.split('@')[1] : email).toLowerCase();
+  const domain = (email?.match('@') ? email.split('@')[1] : email)?.toLowerCase();
   
   if (!domain) {
     return null;
