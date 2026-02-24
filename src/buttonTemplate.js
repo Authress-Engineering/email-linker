@@ -27,11 +27,11 @@ export default function buttonTemplate() {
     return '';
   }
 
-  const { brandData, link } = buildUrlData;
+  const { brandData, link, appDeepLink } = buildUrlData;
 
   return html`
     ${SetTheme.call(this)}
-    <button class="sign-in-button" part="button" @click="${(e) => { handleClick(e, link); }}">
+    <button class="sign-in-button" part="button" @click="${(e) => { handleClick(e, { link, appDeepLink }); }}">
       <div part="button-text-wrapper" style="display: flex; align-items: center;">
         ${unsafeHTML(brandData.templateHtml)}
         <span part="button-text" style="padding-left: 0.5rem">${brandData.buttonText}</span>
@@ -40,6 +40,14 @@ export default function buttonTemplate() {
   `;
 }
 
-function handleClick(event, link) {
-  window.open(link, '_self');
+function handleClick(event, { link, appDeepLink }) {
+  if (!appDeepLink) {
+    window.location.href = link;
+  }
+
+  window.location.href = appDeepLink;
+  setTimeout(function() {
+    // If the user is still on this page after 1 second, the app likely didn't open, so send them to the web.
+    window.location.href = link;
+  }, 1000);
 }
