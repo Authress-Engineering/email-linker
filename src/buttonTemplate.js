@@ -43,6 +43,7 @@ export default function buttonTemplate() {
 function handleClick(event, { link, appDeepLink }) {
   if (!appDeepLink) {
     window.location.href = link;
+    return;
   }
 
   window.location.href = appDeepLink;
