@@ -31,24 +31,36 @@ export default function buttonTemplate() {
 
   return html`
     ${SetTheme.call(this)}
-    <button class="sign-in-button" part="button" @click="${(e) => { handleClick(e, { link, appDeepLink }); }}">
-      <div part="button-text-wrapper" style="display: flex; align-items: center;">
-        ${unsafeHTML(brandData.templateHtml)}
-        <span part="button-text" style="padding-left: 0.5rem">${brandData.buttonText}</span>
+    <a class="sign-in-button" href="${link || '#'}" role="button" @click="${(e) => { handleClick(e, { link, appDeepLink }); }}">
+      <div part="button">
+        <div part="button-text-wrapper" style="display: flex; align-items: center;">
+          ${unsafeHTML(brandData.templateHtml)}
+          <span part="button-text" style="padding-left: 0.5rem">${brandData.buttonText}</span>
+        </div>
       </div>
-    </button>
+    </a>
   `;
 }
 
 function handleClick(event, { link, appDeepLink }) {
+  if (event.ctrlKey || event.metaKey || event.shiftKey || event.button === 1) {
+    return;
+  }
+
+  // Ensure we don't trigger the link navigation when it is optimized for directly clicking on the <a>
+  event.preventDefault();
+
   if (!appDeepLink) {
     window.location.href = link;
     return;
   }
 
   window.location.href = appDeepLink;
+
   setTimeout(function() {
     // If the user is still on this page after 1 second, the app likely didn't open, so send them to the web.
-    window.location.href = link;
+    if (document.visibilityState === 'visible') {
+      window.location.href = link;
+    }
   }, 1000);
 }

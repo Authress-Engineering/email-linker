@@ -21,6 +21,14 @@ export default class EmailLinker extends LitElement {
     return [
       css`
       .sign-in-button {
+        display: inline-flex; 
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+
+        text-decoration: none;
+        text-align: center;
+
         border: none;
         cursor: pointer;
         min-height: 21px;
@@ -28,32 +36,36 @@ export default class EmailLinker extends LitElement {
         background-color: white;
         box-shadow: 0 2px 5px #1D2F3B1A;
         color: var(--dark);
-      
+
         border-radius: 5px;
         border-color: var(--info);
         padding: 10px 14px;
-      
+
         font-family: 'Roboto', sans-serif;
         line-height: normal;
       }
-      
-      .sign-in-button:focus, .sign-in-button:active:focus {
-        box-shadow: none;
+
+      .sign-in-button.disabled {
+        pointer-events: none;
+        opacity: 0.6;
+        color: var(--gray);
+        cursor: not-allowed;
       }
-      
-      .sign-in-button:hover:not(:disabled) {
+
+      .sign-in-button:hover:not(.disabled) {
         background-color: var(--primary);
-        color: white
+        color: white;
       }
-      
-      .sign-in-button:active:not(:disabled) {
+
+      .sign-in-button:active:not(.disabled) {
         background-color: var(--gray);
         color: var(--light);
         border-color: var(--info);
       }
-      
-      .sign-in-button:active:disabled {
-        color: var(--gray);
+
+      .sign-in-button:focus, .sign-in-button:active:focus {
+        box-shadow: none;
+        outline: 2px solid var(--primary);
       }
       `
     ];
